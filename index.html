@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Formulario</title>
+
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+       
+        <div id="mensaje"></div>
+        <form method="post" action="#" id="formulario" >
+            <!-- agrupa en caja y pone titulo-->
+            <fieldset>
+                <legend>Formulario de contacto</legend>
+                <span id="mensaje"></span>
+            
+            <ul>
+                <li>
+                    <!-- for indica para quien es la etiqueta-->
+                    <label for="nombre">Nombre completo</label>
+                    <!-- entrada de datos input -->
+                    <input id="nombre" type="text" placeholder="nombre completo" required="true" />
+                </li>
+
+                <li>
+                    <!-- for indica para quien es la etiqueta-->
+                    <label for="apellido">Apellido</label>
+                    <!-- entrada de datos input -->
+                    <input id="apellido" type="text" placeholder="apellido" required="true" />
+                </li>
+
+                <!--Campo RUT-->
+                <li>
+                    <label for="rut"> Rut </label>
+                    <input id="rut" type="text" placeholder="ej: xxxxxxxx-x (sin puntos)" required="true" />
+                </li>
+    
+                <li>
+                    <label for="email"> Correo electronico</label>
+                    <input id="email" type="email" placeholder="ej: formulario@gmail.com" required="true"/>
+                </li>
+    
+                <li>
+                    <label for="telefono"> Telefono</label>
+                    <input id="telefonoMovil" type="number" placeholder="ej: 9xxxxxxxx" onchange="validNumber()" required="true" />
+                </li>
+    
+                <li>
+                    
+                    <label for="lenguajes"> Selecciona uno o mas lenguajes de su interés </label>
+                    <div id="lenguaje" class="lenguaje" >
+                        <ul>     
+                            <!--  lista de elementos a eleccion-->
+                            <li> <input  name="lenguaje" type="checkbox" id="python"/> <label for="cbox1">Python</label><br></li>
+                            <li> <input  name="lenguaje" type="checkbox" id="java">  <label for="cbox2">Java</label><br></li>
+                            <li> <input  name="lenguaje" type="checkbox" id="typescript">  <label for="cbox3">TypeScript</label><br></li>
+                            <li> <input  name="lenguaje" type="checkbox" id="php">  <label for="cbox4">PHP</label><br></li>
+                            <li> <input  name="lenguaje" type="checkbox" id="c#">  <label for="cbox5">C#</label><br></li>
+                            <li> <input  name="lenguaje" type="checkbox" id="c++">  <label for="cbox2">C++</label><br></li>
+                        </ul>
+                    </div>
+                </li>
+                <!-- aquiiiiiiiiiiiii -->
+                <li> 
+                    <label for="nivel">Nivel de conocimiento</label>
+                    <input id="nivel" type="range"  min="0" max="10">
+                    <span id="cambio"></span>
+     
+                    <br>
+                </li>
+
+                <li style="display: inline-flex;">
+                
+                    <label for="yearExp">Años de experiencia laboral</label>
+                    <div class="yearExp">
+                        <input type="radio" id="zeroYear" name="numero" value="0"  required="true" />
+                        <label class=labelRadio for="zeroYear">0</label><br>
+                        <input type="radio" id="oneYear" name="numero" value="1"  required="true" />
+                        <label class=labelRadio for="oneYear">1</label><br>
+                        <input type="radio" id="twoYear" name="numero" value="2"  required="true" />
+                        <label class=labelRadio for="twoYear">2</label><br>
+                        <input type="radio" id="threeYear" name="numero" value="3" required="true" />
+                        <label class=labelRadio for="threeYear">3</label><br>
+                        <input type="radio" id="fourYear" name="numero" value="4"  required="true" />
+                        <label class=labelRadio for="fourYear">4</label><br>
+                        <input type="radio" id="fiveYear" name="numero" value="5"  required="true" />
+                        <label class=labelRadio for="fiveYear">5</label><br>
+                    </div>
+                </li>
+    
+                <li>
+                    <label for="comentarios">Descripcion de usted (Max 300 caracteres)</label>
+                    <textarea id="comentarios" maxlength="300" required="true"></textarea>
+                </li>
+    
+                <li class="button" >
+                    <button type="submit" onClick="return doSubmit()" >Enviar</button>
+                </li>
+
+                <li class="button" >
+                    <button type="reset" onClick="limpiarDatos()">Borrar</button>
+                </li>
+      
+            </ul>
+    
+            </fieldset>
+        </form>
+        
+        <script src="js/inicio.js" async defer></script>
+    </body>
+</html>
